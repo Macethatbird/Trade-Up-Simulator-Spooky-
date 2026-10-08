@@ -752,7 +752,7 @@ function openMysteryBox(free=false){
   document.getElementById("resultCard").classList.remove("show");
   document.getElementById("declineBox").classList.remove("show");
   if(!free){
-    const cost=Math.floor(14000*getPriceMult());
+    const cost=Math.floor(25000*getPriceMult());
     if(stats.money<cost) return alert(`Need $${cost.toLocaleString()}`);
     stats.money-=cost; checkQuestProgress("nomoney", cost);
   }
