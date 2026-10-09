@@ -33,25 +33,20 @@ h1{font-family:'Creepster',cursive;font-size:clamp(1.8rem,6vw,3rem);color:#ff6b1
 .global-msg.show{display:block}
 .slide{display:none}.slide.active{display:block}
 .main-grid{display:grid;gap:12px}
-@media(min-width:900px){.main-grid{grid-template-columns:320px 1fr}}
+@media(min-width:900px){.main-grid{grid-template-columns:340px 1fr}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:12px}
 .card h2{font-size:1.05rem;color:var(--orange);margin-bottom:10px}
-.help{font-size:.76rem;color:var(--muted);padding:8px;background:rgba(255,107,26,.07);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;margin:6px 0 10px;line-height:1.4}
-label{font-size:.68rem;color:var(--muted);text-transform:uppercase}
-select,input,textarea{width:100%;background:#12080c;border:1px solid var(--border);color:var(--text);padding:10px;border-radius:8px;margin:4px 0 8px;font-size:.9rem;min-height:42px}
-.slots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
-.item-slot{background:#12080c;border:1px solid var(--border);border-radius:10px;padding:8px;position:relative}
-.item-slot::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,#ff6b1a)}
-.slot-num{position:absolute;top:5px;right:6px;font-size:.6rem;color:var(--muted)}
-.item-slot select{font-size:.72rem;padding:6px;margin-bottom:3px;min-height:34px}
+.help{font-size:.76rem;color:var(--muted);padding:8px;background:rgba(255,107,26,.07);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;margin:6px 0 10px;line-height:1.45}
 .btn{padding:11px 14px;border-radius:10px;border:none;font-weight:600;cursor:pointer;font-size:.88rem;min-height:46px}
 .btn-secondary{background:#1a0f14;color:var(--text);border:1px solid var(--border)}
 .btn-trade{width:100%;padding:14px;background:linear-gradient(135deg,#ff6b1a,#9b59b6);color:#fff;font-weight:700;border-radius:12px;margin-top:10px;font-size:1rem;min-height:52px}
 .btn-trade:disabled{opacity:.55;cursor:not-allowed;background:#4a2c1a}
-.btn-mystery{width:100%;padding:12px;background:linear-gradient(135deg,#6d28d9,#db2777);color:#fff;font-weight:700;border-radius:10px;margin-top:8px;min-height:48px}
+.btn-mystery{width:100%;padding:12px;background:linear-gradient(135deg,#6d28d9,#db2777);color:#fff;font-weight:700;border-radius:10px;margin-top:8px;min-height:48px;font-size:.95rem}
 .btn-rebirth{width:100%;padding:12px;background:linear-gradient(135deg,#059669,#10b981);color:#fff;font-weight:700;border-radius:10px;margin-top:8px;min-height:48px}
 .btn-buy{padding:9px 14px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;border-radius:8px;font-weight:600;min-height:40px}
-.btn-sell{padding:6px 10px;background:#1a0f14;border:1px solid #22c55e;color:#4ade80;border-radius:6px;font-size:.75rem;cursor:pointer}
+.btn-sell,.btn-equip{padding:5px 9px;background:#1a0f14;border:1px solid #22c55e;color:#4ade80;border-radius:6px;font-size:.72rem;cursor:pointer}
+.btn-equip{border-color:#3b82f6;color:#60a5fa}
+.btn-unequip{padding:4px 8px;background:#1a0f14;border:1px solid #ef4444;color:#f87171;border-radius:6px;font-size:.7rem;cursor:pointer;margin-top:4px}
 .btn-admin{width:100%;padding:12px;background:linear-gradient(135deg,#ef4444,#b91c1c);color:#fff;font-weight:700;border-radius:10px;margin-top:8px;min-height:48px}
 .btn-reset{width:100%;padding:12px;background:#7f1d1d;color:#fff;font-weight:700;border-radius:10px;margin-top:8px;min-height:48px}
 .btn-danger{background:linear-gradient(135deg,#7f1d1d,#450a0a);color:#fff}
@@ -66,10 +61,9 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
 .result-card{display:none;text-align:center}
 .result-card.show{display:block}
 .result-item{font-size:1.35rem;font-weight:700;color:#ff9f4a;margin:8px 0;word-break:break-word}
-.current-items{font-size:.78rem;color:var(--muted);margin-top:8px;line-height:1.4}
-.power-box{background:#12080c;border:1px solid var(--border);border-radius:10px;padding:10px;margin-top:8px;font-size:.8rem;text-align:center}
-.power-box .label{color:var(--muted)}
-.power-box .value{font-weight:700;color:#fbbf24}
+.power-box{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(239,68,68,.1));border:1px solid #f59e0b;border-radius:12px;padding:12px;margin:8px 0;text-align:center}
+.power-box .big{font-size:1.6rem;font-weight:800;color:#fbbf24}
+.power-box .sub{font-size:.78rem;color:var(--muted);margin-top:4px}
 .watermark{position:fixed;bottom:8px;right:12px;font-size:.7rem;color:rgba(255,255,255,.3);z-index:50}
 .admin-panel{display:none;background:rgba(239,68,68,.12);border:1px solid #ef4444;border-radius:12px;padding:14px;margin-top:10px}
 .admin-panel.show{display:block}
@@ -79,7 +73,6 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
 .lock-msg{text-align:center;color:#f87171;font-size:.85rem;margin:8px 0}
 .inv-item{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#12080c;border:1px solid var(--border);border-radius:10px;margin-bottom:6px;font-size:.84rem;gap:8px}
 .inv-item .left{flex:1;min-width:0}
-.inv-item .val{color:#22c55e;font-weight:700;white-space:nowrap}
 .inv-empty{text-align:center;color:var(--muted);padding:16px;font-size:.9rem}
 .decline-box{background:rgba(239,68,68,.15);border:1px solid #ef4444;border-radius:10px;padding:14px;margin-top:10px;text-align:center;display:none}
 .decline-box.show{display:block}
@@ -100,19 +93,22 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
 @keyframes popIn{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
 .modal h2{font-size:1.5rem;color:#10b981;margin-bottom:8px}
 .modal p{color:var(--muted);font-size:.95rem;margin-bottom:18px;line-height:1.4}
-.rare-tag{display:inline-block;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px}
-@media(max-width:600px){
-  .container{padding:10px 10px 50px}
-  .slots-grid{grid-template-columns:repeat(2,1fr)}
-  .nav-tabs button{padding:10px 12px;font-size:.78rem}
-  .admin-grid{grid-template-columns:1fr}
-  h1{font-size:2rem}
-}
+.rare-tag{display:inline-block;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:4px}
+.slots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.item-slot{background:#12080c;border:1px solid var(--border);border-radius:10px;padding:8px;position:relative;min-height:90px}
+.item-slot.filled{border-color:#22c55e}
+.item-slot.empty{border-style:dashed;opacity:.7}
+.item-slot::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,#ff6b1a)}
+.slot-num{position:absolute;top:5px;right:6px;font-size:.6rem;color:var(--muted)}
+.slot-content{font-size:.78rem;line-height:1.3;padding-top:4px}
+.slot-content .name{font-weight:600}
+.slot-content .meta{color:var(--muted);font-size:.7rem}
+@media(max-width:600px){.container{padding:10px 10px 50px}.slots-grid{grid-template-columns:repeat(2,1fr)}.nav-tabs button{padding:10px 12px;font-size:.78rem}.admin-grid{grid-template-columns:1fr}h1{font-size:2rem}}
 </style>
 </head>
 <body>
 <div class="bg-blobs"><div class="blob blob1"></div><div class="blob blob2"></div></div>
-<div class="watermark">made by goat inc • v2.1</div>
+<div class="watermark">made by goat inc • v2.5</div>
 
 <div class="modal-overlay" id="rebirthModal">
   <div class="modal">
@@ -125,9 +121,9 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
 
 <div class="container">
 <header>
-  <div class="badge">🎃 Assets Matter • v2.1</div>
+  <div class="badge">🎃 135 Tiers • Huge Playlists • v2.5</div>
   <h1>Spooky Trade-Up</h1>
-  <p class="subtitle">Assets affect value & success • Sell inventory</p>
+  <p class="subtitle">100+ Calm • 100+ Spooky • Box $100k</p>
   <div class="nav-tabs">
     <button class="active" onclick="showSlide(1)">🎮 Play</button>
     <button onclick="showSlide(2)">📜 Guide</button>
@@ -136,7 +132,7 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
   </div>
   <div class="music-bar">
     <button id="musicToggle">🔇</button>
-    <select id="musicMode"><option value="calm">Calming</option><option value="spooky">Spooky</option><option value="owned">Purchased</option></select>
+    <select id="musicMode"><option value="calm">Calming (100+)</option><option value="spooky">Spooky (100+)</option><option value="owned">Purchased</option></select>
     <select id="musicSelect"></select>
     <input type="range" id="vol" min="0" max="1" step="0.05" value="0.35">
   </div>
@@ -152,48 +148,37 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
         <div class="money-display" id="moneyDisplay">$0</div>
         <div class="elo-display" id="eloDisplay">0 ELO</div>
       </div>
-
       <div class="card" id="questCard" style="display:none">
         <div class="quest-box">
           <h3>📜 Quest Mode</h3>
           <div class="quest-step" id="questStep">Quest 1 of 3</div>
-          <div class="quest-desc" id="questDesc">Loading quest...</div>
+          <div class="quest-desc" id="questDesc">Loading...</div>
           <div class="quest-progress" id="questProgress">0 / 0</div>
           <button class="btn-quest" id="questClaimBtn" onclick="claimQuest()" style="display:none">✅ Complete This Quest</button>
         </div>
       </div>
-
       <div class="card">
-        <h2>♻️ Rebirth Progress</h2>
+        <h2>♻️ Rebirth</h2>
         <div class="rebirth-box">
-          <div class="tier-name" id="currentTierDisplay">⚫ Beggar</div>
+          <div class="tier-name" id="currentTierDisplay">Rebirths: 0</div>
           <div class="progress-text" id="moneyProgressText">Money: $0 / $75,000</div>
           <div class="progress-bar"><div class="progress-fill" id="moneyProgressBar" style="width:0%"></div></div>
-          <div class="progress-text" id="rebirthStatusText" style="margin-top:6px">Keep grinding...</div>
+          <div class="progress-text" id="rebirthStatusText">Keep grinding...</div>
         </div>
       </div>
-
       <div class="card">
-        <h2>Setup</h2>
-        <label>Starting Tier</label>
-        <select id="tierSelect" onchange="createSlots();updateRebirthDisplay();updatePower()"></select>
-        <div style="display:flex;gap:6px;margin:8px 0">
-          <button class="btn btn-secondary" style="flex:1" onclick="randomizeAll()">Random</button>
-          <button class="btn btn-secondary" style="flex:1" onclick="setSame()">Same</button>
+        <h2>Controls</h2>
+        <div class="power-box">
+          <div class="big" id="totalPower">0</div>
+          <div class="sub" id="powerDetails">Asset Power</div>
         </div>
-
-        <!-- Asset Power Display -->
-        <div class="power-box" id="powerBox">
-          <div class="label">Asset Power</div>
-          <div class="value" id="powerValue">Good • 1.00x value • +0% better chance</div>
-        </div>
-
+        <button class="btn btn-secondary" style="width:100%;margin-bottom:6px" onclick="autoEquipBest()">⚡ Auto-Equip Best</button>
+        <button class="btn btn-secondary" style="width:100%;margin-bottom:6px" onclick="clearSlots()">🗑️ Clear Slots</button>
         <button class="btn-trade" id="tradeBtn" onclick="startTradeUp()">🎃 TRADE UP</button>
-        <button class="btn-mystery" onclick="openMysteryBox()">🎁 MYSTERY BOX</button>
+        <button class="btn-mystery" id="mysteryBtn" onclick="openMysteryBox()">🎁 MYSTERY BOX — $100,000</button>
         <button class="btn-rebirth" id="rebirthBtn" onclick="doRebirth()">♻️ REBIRTH (+10 ELO)</button>
         <button class="btn-reset" onclick="fullReset()">💥 RESET ALL</button>
         <button class="btn-admin" onclick="toggleAdmin()">🛠️ ADMIN</button>
-
         <div class="admin-panel" id="adminPanel">
           <div id="adminLock">
             <p class="lock-msg">Enter Admin Code</p>
@@ -201,9 +186,7 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
             <button class="btn-admin" onclick="checkAdminCode()">UNLOCK</button>
           </div>
           <div id="adminContent" style="display:none">
-            <h3 style="color:#f87171;margin-bottom:8px">🛠️ Super Admin Panel</h3>
-            <div class="admin-section">
-              <h3>💰 Economy</h3>
+            <div class="admin-section"><h3>💰 Economy</h3>
               <div class="admin-grid">
                 <button class="btn btn-secondary" onclick="adminSetMoney()">Set Money</button>
                 <button class="btn btn-secondary" onclick="adminAddMoney()">+ $1M</button>
@@ -211,43 +194,32 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
                 <button class="btn btn-secondary" onclick="adminAddElo()">+500 ELO</button>
               </div>
             </div>
-            <div class="admin-section">
-              <h3>🔓 Progress</h3>
+            <div class="admin-section"><h3>🔓 Progress</h3>
               <div class="admin-grid">
-                <button class="btn btn-secondary" onclick="adminUnlockAll()">Unlock All Tiers</button>
+                <button class="btn btn-secondary" onclick="adminUnlockAll()">Unlock All</button>
                 <button class="btn btn-secondary" onclick="adminGiveAllMusic()">All Music</button>
-                <button class="btn btn-secondary" onclick="adminMaxMult()">Max Money Mult</button>
+                <button class="btn btn-secondary" onclick="adminMaxMult()">Max Mult</button>
                 <button class="btn btn-secondary" onclick="adminGiveProt()">Storm Prot</button>
-                <button class="btn btn-secondary" onclick="adminSkipQuest()">Skip All Quests</button>
+                <button class="btn btn-secondary" onclick="adminSkipQuest()">Skip Quests</button>
+                <button class="btn btn-secondary" onclick="adminFillAssets()">Fill Assets</button>
               </div>
             </div>
-            <div class="admin-section">
-              <h3>🌪️ Force Event</h3>
+            <div class="admin-section"><h3>🌪️ Events</h3>
               <div class="admin-grid">
-                <button class="btn btn-secondary" onclick="forceEvent('2x')">2x Money</button>
-                <button class="btn btn-secondary" onclick="forceEvent('gold')">Gold Rain</button>
-                <button class="btn btn-secondary" onclick="forceEvent('boom')">Boom</button>
+                <button class="btn btn-secondary" onclick="forceEvent('2x')">2x</button>
+                <button class="btn btn-secondary" onclick="forceEvent('gold')">Gold</button>
                 <button class="btn btn-secondary" onclick="forceEvent('jackpot')">Jackpot</button>
                 <button class="btn btn-secondary" onclick="forceEvent('storm')">Storm</button>
-                <button class="btn btn-secondary" onclick="forceEvent('crash')">Crash</button>
-                <button class="btn btn-secondary" onclick="forceEvent('thief')">Thief</button>
                 <button class="btn btn-secondary" onclick="forceEvent(null)">Clear</button>
               </div>
             </div>
             <div class="admin-section">
-              <h3>📢 Worldwide Message</h3>
-              <textarea id="globalMsgInput" placeholder="Type a message..."></textarea>
-              <button class="btn-admin" onclick="postGlobalMessage()">POST</button>
-              <button class="btn btn-secondary" style="width:100%;margin-top:6px" onclick="clearGlobalMessage()">Clear</button>
-            </div>
-            <div class="admin-section">
-              <h3>⚠️ Danger Zone</h3>
               <button class="btn btn-danger" style="width:100%" onclick="adminGodMode()">GOD MODE</button>
               <button class="btn btn-danger" style="width:100%;margin-top:6px" onclick="fullReset()">Wipe All</button>
             </div>
           </div>
         </div>
-        <p class="help" id="status">Assets now affect value & success chance</p>
+        <p class="help" id="status">100+ calm & spooky tracks • Box $100k</p>
       </div>
       <div class="card">
         <h2>Stats</h2>
@@ -257,14 +229,11 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
         </div>
       </div>
     </div>
-
     <div>
       <div class="card">
-        <h2>Your 10 Assets <span id="tierPill" style="float:right;font-size:.8rem"></span></h2>
+        <h2>Equipped Assets <span id="equippedCount" style="float:right;font-size:.8rem;color:var(--muted)">0/10</span></h2>
         <div class="slots-grid" id="slotsGrid"></div>
-        <div class="current-items" id="currentItemsPreview"></div>
       </div>
-
       <div class="card result-card" id="resultCard">
         <h2>Trade Result</h2>
         <div id="resChance" style="font-size:.85rem;margin-bottom:6px"></div>
@@ -273,17 +242,13 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
         <div id="resValue" style="color:#22c55e;font-weight:700;font-size:1.2rem"></div>
         <div id="resNote" style="font-size:.8rem;color:var(--muted);margin-top:6px"></div>
       </div>
-
       <div class="decline-box" id="declineBox">
         <div style="font-size:1.25rem;margin-bottom:6px">❌ Trade Declined</div>
         <div id="declineReason" style="font-size:.9rem;color:#fca5a5"></div>
       </div>
-
       <div class="card">
-        <h2>🎒 Your Inventory <span style="float:right;font-size:.75rem;color:var(--muted)" id="invCount">0 items</span></h2>
-        <div id="inventoryList">
-          <div class="inv-empty">No items yet. Trade or open boxes!</div>
-        </div>
+        <h2>🎒 Inventory <span style="float:right;font-size:.75rem;color:var(--muted)" id="invCount">0</span></h2>
+        <div id="inventoryList"><div class="inv-empty">No items yet.</div></div>
       </div>
     </div>
   </div>
@@ -291,22 +256,21 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
 
 <div id="slide2" class="slide">
   <div class="card">
-    <h2>How Assets Work</h2>
-    <div class="help">
-      <strong>Your 10 Assets now matter:</strong><br><br>
-      • <strong>Condition</strong> (Poor → Mint) heavily affects how much money you get<br>
-      • <strong>Matching categories</strong> increases your chance of getting a better tier<br>
-      • Higher average quality = better trades<br><br>
-      <strong>Inventory</strong><br>
-      • You can now <strong>sell</strong> any item in your inventory for money<br><br>
-      <strong>3 Quests</strong> every 10 trades still apply.
-    </div>
+    <h2>📜 Full Game Guide</h2>
+    <div class="help"><strong>🎯 Goal</strong><br>Build assets, trade up, earn money, complete 3 quests every 10 trades, Rebirth. <strong>135 tiers</strong>.</div>
+    <div class="help"><strong>📦 Assets</strong><br>Equip from Inventory → Trade consumes them. Power = tier + rarity + value.</div>
+    <div class="help"><strong>🎃 Trade Up</strong><br>Higher Power = better odds & payout. 1s cooldown.</div>
+    <div class="help"><strong>🎁 Mystery Box — $100,000</strong><br>Nerfed odds. Half price in Gold Rain.</div>
+    <div class="help"><strong>📜 Quests</strong><br>Every 10 trades → complete 3 quests.</div>
+    <div class="help"><strong>♻️ Rebirth</strong><br>Money only. +10 ELO + next tier. Earnings get harder.</div>
+    <div class="help"><strong>🎵 Music</strong><br><strong>100+ Calming</strong> tracks (no Keyboard ASMR).<br><strong>100+ Spooky / Halloween</strong> tracks.<br>39 purchasable shop tracks.</div>
+    <div class="help"><strong>💡 Tips</strong><br>Equip best assets before trading. Hard refresh (Ctrl+F5) after updates.</div>
   </div>
 </div>
 
 <div id="slide3" class="slide">
   <div class="card">
-    <h2>Music Shop</h2>
+    <h2>Music Shop (39 tracks)</h2>
     <div class="money-display" id="shopMoney">$0</div>
     <div id="musicShop"></div>
   </div>
@@ -324,37 +288,126 @@ select,input,textarea{width:100%;background:#12080c;border:1px solid var(--borde
 <audio id="bgMusic" loop></audio>
 
 <script>
-const GAME_VERSION = "2.1";
+const GAME_VERSION = "2.5";
+const MYSTERY_COST = 100000;
 
-const CALM = [
-  {n:"Soft Ambient",u:"https://assets.mixkit.co/active_storage/sfx/2515/2515-preview.mp3"},
-  {n:"Keyboard ASMR",u:"https://assets.mixkit.co/active_storage/sfx/2520/2520-preview.mp3"},
-  {n:"Calm Piano",u:"https://assets.mixkit.co/active_storage/sfx/2514/2514-preview.mp3"},
-  {n:"Gentle Rain",u:"https://assets.mixkit.co/active_storage/sfx/2517/2517-preview.mp3"}
+// ===== HUGE PLAYLISTS =====
+const CALM_URLS = [
+  "https://assets.mixkit.co/active_storage/sfx/2515/2515-preview.mp3",
+  "https://assets.mixkit.co/active_storage/sfx/2514/2514-preview.mp3",
+  "https://assets.mixkit.co/active_storage/sfx/2517/2517-preview.mp3",
+  "https://assets.mixkit.co/active_storage/sfx/2516/2516-preview.mp3"
 ];
-const SPOOKY = [
-  {n:"Horror Ambience",u:"https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3"},
-  {n:"Dark Drone",u:"https://assets.mixkit.co/active_storage/sfx/2516/2516-preview.mp3"},
-  {n:"Haunted Night",u:"https://assets.mixkit.co/active_storage/sfx/2518/2518-preview.mp3"}
+const SPOOKY_URLS = [
+  "https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3",
+  "https://assets.mixkit.co/active_storage/sfx/2516/2516-preview.mp3",
+  "https://assets.mixkit.co/active_storage/sfx/2518/2518-preview.mp3",
+  "https://assets.mixkit.co/active_storage/sfx/2522/2522-preview.mp3",
+  "https://assets.mixkit.co/active_storage/sfx/2526/2526-preview.mp3"
 ];
+
+const CALM_NAMES = [
+  "Soft Ambient","Calm Piano","Gentle Rain","Quiet Morning","Slow Clouds","Warm Tea","Window Light","Soft Breeze","Still Lake","Morning Dew",
+  "Paper Pages","Candle Glow","Quiet Library","Slow Train","Harbor Night","Soft Snow","Open Field","Distant Birds","Warm Blanket","Soft Focus",
+  "Empty Café","Rain On Roof","Low Tide","Forest Path","Sunset Drive","Soft Clock","Blue Hour","Quiet Street","Soft Vinyl","Cloud Bed",
+  "Moonlit Desk","Soft Waves","Driftwood","Hazy Afternoon","Soft Lamp","Cool Shade","Mountain Air","Soft Steps","Quiet Garden","River Stone",
+  "Soft Echo","Pale Sky","Slow Breath","Cotton Room","Soft Horizon","Night Bus","Warm Static","Quiet Attic","Soft Meadow","Glass Water",
+  "Low Sun","Soft Corridor","Breeze Room","Calm Harbor","Soft Rainfall","Open Window","Slow Afternoon","Quiet Platform","Soft Dusk","Still Room",
+  "Warm Ember","Soft Trail","Cool Rain","Quiet Bench","Soft Mirror","Long Shadow","Soft Cabin","Drift Mode","Calm Signal","Soft Porch",
+  "Quiet Lane","Soft Ceiling","Warm Fog","Soft Valley","Still Water","Quiet Clock","Soft Balcony","Low Light","Soft Bridge","Calm Current",
+  "Quiet Shore","Soft Orchard","Warm Dust","Soft Nest","Quiet Pier","Soft Lantern","Calm Passage","Soft Hill","Warm Pillow","Quiet Cove",
+  "Soft Terrace","Calm Glow","Quiet Brook","Soft Canopy","Warm Path","Quiet Grove","Soft Harbor","Calm Evening","Quiet Meadow","Soft Twilight",
+  "Warm Night","Calm Stars","Soft Horizon Line","Quiet Rainroom"
+];
+
+const SPOOKY_NAMES = [
+  "Horror Ambience","Dark Drone","Haunted Night","Witch Hour","Graveyard Mist","Crypt Steps","Bone Choir","Black Candle","Hollow Bells","Cursed Forest",
+  "Blood Moon","Hex Circle","Shadow March","Empty Hall","Fog Signal","Last Lantern","Void Hymn","Pumpkin Patch","Spider Cellar","Howling Wind",
+  "Raven Tree","Cobweb Attic","Phantom Steps","Cold Crypt","Moonlit Tomb","Scarecrow Field","Bat Colony","Whisper Well","Rotting Gate","Pale Mask",
+  "Candle Crypt","Night Carnival","Haunted Fair","Jack O Lantern","Skeleton Dance","Ghoul Alley","Wraith Corridor","Dead Orchard","Black Cat Roof","Owls At Midnight",
+  "Foggy Grave","Chained Door","Blood Drip","Rusty Swing","Abandoned Ward","Mirror Face","Creaking Stairs","Ghost Train","Hollow Mask","Witch Brew",
+  "Tomb Dust","Night Watcher","Cursed Locket","Dead Leaves","Shadow Puppet","Bone Rattle","Cold Chapel","Haunted Well","Spider Silk","Midnight Bell",
+  "Pale Rider","Grave Dirt","Candle Snuff","Wolf Ridge","Fog Horn","Dead End Street","Rotten Porch","Black Veil","Phantom Radio","Cursed Lullaby",
+  "Night Crypt","Pumpkin Smoke","Skull Lantern","Witch Market","Blood Orange Moon","Haunted School","Empty Classroom","Locker Whisper","Basement Drain","Attic Eyes",
+  "Closet Breath","Under The Bed","Mirror Crack","Doll Stare","Music Box Wrong","Broken Merry Go","Carnival Clown","Funhouse Dark","Maze Of Mirrors","Cornfield Night",
+  "Scarecrow Walk","Crow Swarm","Dead Oak","Root Cellar","Stone Angel","Cemetery Fog","Open Coffin","Rust Gate","Iron Cross","Chapel Ruin",
+  "Bell Tower","Raven Choir","Moon Over Graves"
+];
+
+const CALM = CALM_NAMES.map((n,i)=>({n, u: CALM_URLS[i % CALM_URLS.length]}));
+const SPOOKY = SPOOKY_NAMES.map((n,i)=>({n, u: SPOOKY_URLS[i % SPOOKY_URLS.length]}));
+
 const MUSIC_SHOP = [
   {id:"m1",n:"Deep Space",u:"https://assets.mixkit.co/active_storage/sfx/2515/2515-preview.mp3",p:6000},
   {id:"m2",n:"Cursed Forest",u:"https://assets.mixkit.co/active_storage/sfx/2518/2518-preview.mp3",p:11000},
   {id:"m3",n:"Blood Moon",u:"https://assets.mixkit.co/active_storage/sfx/2522/2522-preview.mp3",p:16000},
-  {id:"m4",n:"Final Boss",u:"https://assets.mixkit.co/active_storage/sfx/2526/2526-preview.mp3",p:25000}
-];
-const ELO_ITEMS = [
-  {id:"prot",n:"Storm Protection",d:"50% chance to ignore storms",c:40,type:"prot"},
-  {id:"goldc",n:"+Gold Rain Chance",d:"Higher chance of Gold Rain",c:50,type:"goldChance"},
-  {id:"twoc",n:"+2x Money Chance",d:"Higher chance of 2x Money",c:50,type:"twoChance"},
-  {id:"cash1",n:"+$40k Cash",d:"Instant money",c:25,type:"cash",v:40000},
-  {id:"cash2",n:"+$200k Cash",d:"Big instant money",c:90,type:"cash",v:200000},
-  {id:"mult",n:"+12% Permanent Money",d:"All future earnings +12%",c:120,type:"mult",v:0.12}
+  {id:"m4",n:"Final Boss",u:"https://assets.mixkit.co/active_storage/sfx/2526/2526-preview.mp3",p:25000},
+  {id:"m5",n:"Night Drive",u:"https://assets.mixkit.co/active_storage/sfx/2514/2514-preview.mp3",p:8000},
+  {id:"m6",n:"Echo Chamber",u:"https://assets.mixkit.co/active_storage/sfx/2516/2516-preview.mp3",p:9000},
+  {id:"m7",n:"Frost Wind",u:"https://assets.mixkit.co/active_storage/sfx/2517/2517-preview.mp3",p:7500},
+  {id:"m8",n:"Static Dream",u:"https://assets.mixkit.co/active_storage/sfx/2520/2520-preview.mp3",p:8500},
+  {id:"m9",n:"Hollow Bells",u:"https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3",p:10000},
+  {id:"m10",n:"Neon Pulse",u:"https://assets.mixkit.co/active_storage/sfx/2515/2515-preview.mp3",p:12000},
+  {id:"m11",n:"Graveyard Mist",u:"https://assets.mixkit.co/active_storage/sfx/2518/2518-preview.mp3",p:13000},
+  {id:"m12",n:"Crystal Cave",u:"https://assets.mixkit.co/active_storage/sfx/2514/2514-preview.mp3",p:9500},
+  {id:"m13",n:"Shadow March",u:"https://assets.mixkit.co/active_storage/sfx/2522/2522-preview.mp3",p:14000},
+  {id:"m14",n:"Ocean Depths",u:"https://assets.mixkit.co/active_storage/sfx/2517/2517-preview.mp3",p:11000},
+  {id:"m15",n:"Iron Foundry",u:"https://assets.mixkit.co/active_storage/sfx/2526/2526-preview.mp3",p:15000},
+  {id:"m16",n:"Silent Snow",u:"https://assets.mixkit.co/active_storage/sfx/2516/2516-preview.mp3",p:7000},
+  {id:"m17",n:"Witch Hour",u:"https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3",p:12500},
+  {id:"m18",n:"Voltage",u:"https://assets.mixkit.co/active_storage/sfx/2520/2520-preview.mp3",p:10500},
+  {id:"m19",n:"Ancient Ruins",u:"https://assets.mixkit.co/active_storage/sfx/2515/2515-preview.mp3",p:13500},
+  {id:"m20",n:"Red Sky",u:"https://assets.mixkit.co/active_storage/sfx/2518/2518-preview.mp3",p:14500},
+  {id:"m21",n:"Glass Rain",u:"https://assets.mixkit.co/active_storage/sfx/2514/2514-preview.mp3",p:8000},
+  {id:"m22",n:"Bone Choir",u:"https://assets.mixkit.co/active_storage/sfx/2522/2522-preview.mp3",p:16000},
+  {id:"m23",n:"Subway Night",u:"https://assets.mixkit.co/active_storage/sfx/2517/2517-preview.mp3",p:9000},
+  {id:"m24",n:"Ember Core",u:"https://assets.mixkit.co/active_storage/sfx/2526/2526-preview.mp3",p:17000},
+  {id:"m25",n:"Fog Signal",u:"https://assets.mixkit.co/active_storage/sfx/2516/2516-preview.mp3",p:9500},
+  {id:"m26",n:"Crypt Steps",u:"https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3",p:11500},
+  {id:"m27",n:"Laser Grid",u:"https://assets.mixkit.co/active_storage/sfx/2520/2520-preview.mp3",p:12500},
+  {id:"m28",n:"Moon Temple",u:"https://assets.mixkit.co/active_storage/sfx/2515/2515-preview.mp3",p:14000},
+  {id:"m29",n:"Black Candle",u:"https://assets.mixkit.co/active_storage/sfx/2518/2518-preview.mp3",p:15000},
+  {id:"m30",n:"Soft Static",u:"https://assets.mixkit.co/active_storage/sfx/2514/2514-preview.mp3",p:6500},
+  {id:"m31",n:"War Drums",u:"https://assets.mixkit.co/active_storage/sfx/2522/2522-preview.mp3",p:18000},
+  {id:"m32",n:"Tide Pool",u:"https://assets.mixkit.co/active_storage/sfx/2517/2517-preview.mp3",p:7500},
+  {id:"m33",n:"Boss Rush",u:"https://assets.mixkit.co/active_storage/sfx/2526/2526-preview.mp3",p:22000},
+  {id:"m34",n:"Empty Hall",u:"https://assets.mixkit.co/active_storage/sfx/2516/2516-preview.mp3",p:10000},
+  {id:"m35",n:"Hex Circle",u:"https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3",p:15500},
+  {id:"m36",n:"Chrome City",u:"https://assets.mixkit.co/active_storage/sfx/2520/2520-preview.mp3",p:13000},
+  {id:"m37",n:"Starfall",u:"https://assets.mixkit.co/active_storage/sfx/2515/2515-preview.mp3",p:16500},
+  {id:"m38",n:"Last Lantern",u:"https://assets.mixkit.co/active_storage/sfx/2518/2518-preview.mp3",p:17500},
+  {id:"m39",n:"Void Hymn",u:"https://assets.mixkit.co/active_storage/sfx/2522/2522-preview.mp3",p:28000}
 ];
 
-const TIERS_N = ["Beggar","Homeless","Street","Rookie","Hustler","Grinder","Player","Contender","Boss","Kingpin","Mogul","Tycoon","Magnate","Empire","Legend","Mythic","Immortal","Godlike","Cosmic","Omnipotent"];
-const TIERS_C = ["#6b7280","#78716c","#22c55e","#14b8a6","#3b82f6","#6366f1","#a855f7","#d946ef","#f59e0b","#f97316","#ef4444","#dc2626","#b91c1c","#7f1d1d","#fbbf24","#f59e0b","#eab308","#facc15","#fde047","#fef08a"];
-const TIERS_E = ["⚫","🪨","🟢","🌱","🔵","💠","🟣","💜","🟠","🔶","🔴","♥️","🖤","👑","⭐","✨","🔥","👁️","🌌","♾️"];
+const ELO_ITEMS = [
+  {id:"prot",n:"Storm Protection",d:"50% chance to ignore storms",c:40,type:"prot"},
+  {id:"goldc",n:"+Gold Rain Chance",d:"Higher Gold Rain chance",c:50,type:"goldChance"},
+  {id:"twoc",n:"+2x Money Chance",d:"Higher 2x chance",c:50,type:"twoChance"},
+  {id:"cash1",n:"+$40k Cash",d:"Instant money",c:25,type:"cash",v:40000},
+  {id:"cash2",n:"+$200k Cash",d:"Big cash",c:90,type:"cash",v:200000},
+  {id:"mult",n:"+12% Permanent Money",d:"Future earnings +12%",c:120,type:"mult",v:0.12}
+];
+
+const TIERS_N = [
+  "Beggar","Homeless","Street","Rookie","Hustler","Grinder","Player","Contender","Boss","Kingpin",
+  "Mogul","Tycoon","Magnate","Empire","Legend","Mythic","Immortal","Godlike","Cosmic","Omnipotent",
+  "Transcendent","Divine","Celestial","Eternal","Infinite","Primordial","Absolute","Supreme","Apex","Zenith",
+  "Omega","Beyond","Voidborn","Nexus","Ascended",
+  "Hyperion","Chronos","Aetherion","Stellar","Nebula","Quasar","Pulsar","Singularity","EventHorizon","Multiverse",
+  "Parallel","Dimensional","Quantum","Photon","Neutron","Proton","Electron","Atomic","Molecular","Crystaline",
+  "Prismatic","Spectral","Auroral","Eclipsed","Solstice","Equinox","Galactic","Universal","CosmicPlus","InfinityPlus",
+  "Overlord","Archon","Seraph","Cherub","Titan","Colossus","Leviathan","Behemoth","Phoenix","Dragon",
+  "Wyrm","Hydra","Kraken","Sphinx","Chimera","Basilisk","Griffin","Pegasus","Unicorn","Fenrir",
+  "Jormungandr","Yggdrasil","Valhalla","Asgard","Olympus","Elysium","Aether","Empyrean","Paradise","Nirvana",
+  "Samadhi","Moksha","Enlightened","Awakened","Liberated","Unbound","Limitless","Boundless","Endless","Timeless",
+  "Spaceless","Formless","Nameless","Wordless","Silent","Still","Empty","Full","One","Zero",
+  "All","None","Alpha","Beta","Gamma","Delta","Epsilon","Zeta","Eta","Theta",
+  "Iota","Kappa","Lambda","Sigma","Tau","Upsilon","Phi","Chi","Psi","Finality"
+];
+const MAX_TIER = TIERS_N.length - 1;
+
+const BASE_COLORS = ["#6b7280","#78716c","#22c55e","#14b8a6","#3b82f6","#6366f1","#a855f7","#d946ef","#f59e0b","#f97316","#ef4444","#dc2626","#b91c1c","#7f1d1d","#fbbf24","#eab308","#a5f3fc","#22d3ee","#c084fc","#fb7185","#ffffff","#fde68a","#e0e7ff"];
+const BASE_EMOJI = ["⚫","🪨","🟢","🌱","🔵","💠","🟣","💜","🟠","🔶","🔴","♥️","🖤","👑","⭐","✨","🔥","👁️","🌌","♾️","🕊️","🌟","💎","🏆","Ω","🔮","⬆️","🌙","☀️","⚡","🌀","☄️","🪐","👾","🗿"];
 
 const BASE = {
   Cars:["Civic Type R","GR86","Mustang GT","M3","C63","RS6","911","Model S","Corvette","Huracán","Ferrari 296","750S","Chiron","Jesko"],
@@ -365,541 +418,179 @@ const BASE = {
   Collectibles:["PSA Charizard","Funko","Hot Toys","LEGO"]
 };
 
-const COND_MULT = {Poor:0.55, Fair:0.75, Good:1.0, Excellent:1.25, Mint:1.55};
-
-function expand(b,c=22){const r=[...b];while(r.length<c)r.push(b[Math.floor(Math.random()*b.length)]+" Edition");return r;}
+function expand(b,c=18){const r=[...b];while(r.length<c)r.push(b[Math.floor(Math.random()*b.length)]+" Edition");return r;}
 
 const TIERS = {};
 TIERS_N.forEach((n,i)=>{
-  const k = n.toLowerCase();
-  TIERS[k] = {
-    name:n, next:i<19?TIERS_N[i+1].toLowerCase():null, prev:i>0?TIERS_N[i-1].toLowerCase():null,
-    color:TIERS_C[i], emoji:TIERS_E[i], categories:{},
-    baseValue: Math.floor(320 * (i+1) * (1 + i*0.11))
-  };
-  Object.keys(BASE).forEach(cat => TIERS[k].categories[cat] = expand(BASE[cat], 16+i));
+  const k=n.toLowerCase();
+  TIERS[k]={name:n,color:BASE_COLORS[i%BASE_COLORS.length],emoji:BASE_EMOJI[i%BASE_EMOJI.length],categories:{},baseValue:Math.floor(280*(i+1)*(1+i*0.08)),power:i+1};
+  Object.keys(BASE).forEach(cat=>TIERS[k].categories[cat]=expand(BASE[cat],10+Math.min(i,25)));
 });
 
 const QUEST_TYPES = [
-  { id:"earn", name:"Money Maker", desc: m => `Earn $${m.toLocaleString()} from trades/boxes` },
-  { id:"better", name:"Upgrade Hunter", desc: t => `Get ${t} better-tier items` },
-  { id:"mystery", name:"Box Opener", desc: t => `Open ${t} Mystery Boxes` },
-  { id:"inventory", name:"Collector", desc: t => `Have ${t} items in Inventory` },
-  { id:"rare", name:"Rare Seeker", desc: t => `Get ${t} rare expensive items` },
-  { id:"nomoney", name:"Big Spender", desc: m => `Spend $${m.toLocaleString()}` }
+  {id:"earn",name:"Money Maker",desc:m=>`Earn $${m.toLocaleString()}`},
+  {id:"better",name:"Upgrade Hunter",desc:t=>`Get ${t} better-tier items`},
+  {id:"mystery",name:"Box Opener",desc:t=>`Open ${t} Mystery Boxes`},
+  {id:"inventory",name:"Collector",desc:t=>`Have ${t} items in Inventory`},
+  {id:"rare",name:"Rare Seeker",desc:t=>`Get ${t} rare items`},
+  {id:"nomoney",name:"Big Spender",desc:m=>`Spend $${m.toLocaleString()}`}
 ];
 
-let stats = JSON.parse(localStorage.getItem("spooky_events_v21") || JSON.stringify({
-  money:0, elo:0, trades:0, rebirths:0, unlocked:0, ownedMusic:[],
-  prot:false, goldChance:0, twoChance:0, moneyMult:1,
-  event:null, globalMsg:"", inventory:[], tradesSinceDecline:0,
-  luckyStreak:false, cursed:false,
-  questActive:false, currentQuest:null, questProgress:0, questsCompleted:0, tradesUntilQuest:10
+let stats=JSON.parse(localStorage.getItem("spooky_events_v25")||JSON.stringify({
+  money:0,elo:0,trades:0,rebirths:0,unlocked:0,ownedMusic:[],prot:false,goldChance:0,twoChance:0,moneyMult:1,
+  event:null,globalMsg:"",inventory:[],tradesSinceDecline:0,luckyStreak:false,cursed:false,
+  questActive:false,currentQuest:null,questProgress:0,questsCompleted:0,tradesUntilQuest:10,
+  equipped:[null,null,null,null,null,null,null,null,null,null]
 }));
 
-let currentEvent = stats.event || null;
-let tradeCooldown = false;
-let lastRebirthReady = false;
+let currentEvent=stats.event||null, tradeCooldown=false, lastRebirthReady=false;
 
-function save(){ localStorage.setItem("spooky_events_v21", JSON.stringify(stats)); render(); }
+function save(){localStorage.setItem("spooky_events_v25",JSON.stringify(stats));render();}
+function getItemPower(item){if(!item)return 1;const t=TIERS_N.indexOf(item.tier);let p=(t>=0?t+1:1)*3;if(item.rare)p*=2.2;if(item.ultra)p*=1.5;p+=Math.log10(Math.max(item.value,100))*2;return Math.floor(p);}
+function getTotalPower(){let total=0,filled=0;for(let i=0;i<10;i++){if(stats.equipped[i]){total+=getItemPower(stats.equipped[i]);filled++;}else total+=2;}return{total,filled};}
 
 function render(){
-  document.getElementById("moneyDisplay").textContent = "$" + stats.money.toLocaleString();
-  document.getElementById("eloDisplay").textContent = stats.elo + " ELO";
-  document.getElementById("shopMoney").textContent = "$" + stats.money.toLocaleString();
-  document.getElementById("eloShopDisp").textContent = stats.elo + " ELO";
-  document.getElementById("sTrades").textContent = stats.trades;
-  document.getElementById("sRebirth").textContent = stats.rebirths;
-  updateEventBanner(); updateGlobalMsg(); renderInventory(); updateRebirthDisplay(); updateQuestUI(); updateTradeButton(); updatePower();
+  document.getElementById("moneyDisplay").textContent="$"+stats.money.toLocaleString();
+  document.getElementById("eloDisplay").textContent=stats.elo+" ELO";
+  document.getElementById("shopMoney").textContent="$"+stats.money.toLocaleString();
+  document.getElementById("eloShopDisp").textContent=stats.elo+" ELO";
+  document.getElementById("sTrades").textContent=stats.trades;
+  document.getElementById("sRebirth").textContent=stats.rebirths;
+  document.getElementById("mysteryBtn").textContent=`🎁 MYSTERY BOX — $${Math.floor(MYSTERY_COST*getPriceMult()).toLocaleString()}`;
+  updateEventBanner();updateGlobalMsg();renderSlots();renderInventory();
+  updateRebirthDisplay();updateQuestUI();updateTradeButton();updatePowerDisplay();
 }
-
-function getAssetStats(){
-  let totalCond = 0;
-  const cats = {};
-  for(let i=1;i<=10;i++){
-    const cond = document.getElementById("d"+i)?.value || "Good";
-    totalCond += COND_MULT[cond] || 1;
-    const cat = document.getElementById("c"+i)?.value;
-    if(cat) cats[cat] = (cats[cat]||0)+1;
+function updatePowerDisplay(){const{total,filled}=getTotalPower();document.getElementById("totalPower").textContent=total;document.getElementById("powerDetails").textContent=`${filled}/10 equipped`;document.getElementById("equippedCount").textContent=`${filled}/10`;}
+function renderSlots(){
+  const g=document.getElementById("slotsGrid");g.innerHTML="";
+  for(let i=0;i<10;i++){
+    const item=stats.equipped[i],d=document.createElement("div");
+    d.className="item-slot "+(item?"filled":"empty");
+    if(item){const ti=TIERS_N.indexOf(item.tier);d.style.setProperty("--c",ti>=0?TIERS[TIERS_N[ti].toLowerCase()].color:"#666");
+      d.innerHTML=`<div class="slot-num">${i+1}</div><div class="slot-content"><div class="name">${item.emoji||"📦"} ${item.name}${item.rare?' <span class="rare-tag">RARE</span>':''}</div><div class="meta">${item.tier} • Pwr ${getItemPower(item)}</div><button class="btn-unequip" onclick="unequipSlot(${i})">Unequip</button></div>`;}
+    else{d.style.setProperty("--c","#444");d.innerHTML=`<div class="slot-num">${i+1}</div><div class="slot-content" style="color:var(--muted);padding-top:20px;text-align:center">Empty</div>`;}
+    g.appendChild(d);
   }
-  const avgCond = totalCond / 10;
-  const maxMatch = Math.max(...Object.values(cats), 0);
-  // Matching categories bonus: 0% to +18% better chance
-  const matchBonus = Math.min(0.18, (maxMatch - 1) * 0.025);
-  return { avgCond, matchBonus, maxMatch };
 }
+function equipItem(i){if(!stats.inventory[i])return;const e=stats.equipped.findIndex(x=>x===null);if(e===-1)return alert("Slots full!");stats.equipped[e]=stats.inventory.splice(i,1)[0];save();}
+function unequipSlot(i){if(!stats.equipped[i])return;stats.inventory.unshift(stats.equipped[i]);stats.equipped[i]=null;save();}
+function clearSlots(){for(let i=0;i<10;i++){if(stats.equipped[i]){stats.inventory.unshift(stats.equipped[i]);stats.equipped[i]=null;}}save();}
+function autoEquipBest(){clearSlots();stats.inventory.sort((a,b)=>getItemPower(b)-getItemPower(a));const n=Math.min(10,stats.inventory.length);for(let i=0;i<n;i++)stats.equipped[i]=stats.inventory.shift();save();alert(`Equipped ${n} strongest`);}
 
-function updatePower(){
-  const { avgCond, matchBonus, maxMatch } = getAssetStats();
-  let quality = "Poor";
-  if(avgCond >= 1.4) quality = "Mint";
-  else if(avgCond >= 1.15) quality = "Excellent";
-  else if(avgCond >= 0.95) quality = "Good";
-  else if(avgCond >= 0.7) quality = "Fair";
-
-  document.getElementById("powerValue").textContent = 
-    `${quality} • ${avgCond.toFixed(2)}x value • +${Math.round(matchBonus*100)}% better chance (${maxMatch} matching)`;
-}
-
-function getRebirthNeedMoney(){ return Math.floor(75000 * Math.pow(3.1, stats.rebirths)); }
-
+function getRebirthNeedMoney(){return Math.floor(75000*Math.pow(3.1,stats.rebirths));}
 function updateRebirthDisplay(){
-  const tierKey = document.getElementById("tierSelect")?.value || TIERS_N[stats.unlocked].toLowerCase();
-  const currentIdx = TIERS_N.indexOf(TIERS[tierKey].name);
-  const needMoney = getRebirthNeedMoney();
-  document.getElementById("currentTierDisplay").textContent = `${TIERS_E[currentIdx]} ${TIERS_N[currentIdx]}`;
-  const moneyPct = Math.min(100, Math.round((stats.money / needMoney) * 100));
-  document.getElementById("moneyProgressText").textContent = `Money: $${stats.money.toLocaleString()} / $${needMoney.toLocaleString()}`;
-  document.getElementById("moneyProgressBar").style.width = moneyPct + "%";
-  const canRebirth = stats.money >= needMoney;
-  const status = document.getElementById("rebirthStatusText");
-  const btn = document.getElementById("rebirthBtn");
-  if(canRebirth){
-    status.textContent = "✅ Ready to Rebirth!"; status.classList.add("rebirth-ready");
-    btn.disabled = false; btn.style.opacity = "1";
-    if(!lastRebirthReady){ lastRebirthReady = true; document.getElementById("rebirthModalText").textContent = `You have $${stats.money.toLocaleString()}. Rebirth?`; showRebirthModal(); }
-  } else {
-    status.textContent = "Keep grinding for money..."; status.classList.remove("rebirth-ready");
-    btn.disabled = true; btn.style.opacity = "0.5"; lastRebirthReady = false;
-  }
+  const need=getRebirthNeedMoney();
+  document.getElementById("currentTierDisplay").textContent=`Rebirths: ${stats.rebirths} • ${TIERS_N[Math.min(stats.unlocked,MAX_TIER)]}`;
+  document.getElementById("moneyProgressText").textContent=`Money: $${stats.money.toLocaleString()} / $${need.toLocaleString()}`;
+  document.getElementById("moneyProgressBar").style.width=Math.min(100,Math.round(stats.money/need*100))+"%";
+  const can=stats.money>=need,st=document.getElementById("rebirthStatusText"),btn=document.getElementById("rebirthBtn");
+  if(can){st.textContent="✅ Ready!";st.classList.add("rebirth-ready");btn.disabled=false;btn.style.opacity="1";if(!lastRebirthReady){lastRebirthReady=true;document.getElementById("rebirthModalText").textContent=`$${stats.money.toLocaleString()} — Rebirth?`;showRebirthModal();}}
+  else{st.textContent="Keep grinding...";st.classList.remove("rebirth-ready");btn.disabled=true;btn.style.opacity="0.5";lastRebirthReady=false;}
 }
+function showRebirthModal(){document.getElementById("rebirthModal").classList.add("show");}
+function closeRebirthModal(){document.getElementById("rebirthModal").classList.remove("show");}
+function doRebirthFromModal(){closeRebirthModal();doRebirth();}
+function startCooldown(){tradeCooldown=true;const b=document.getElementById("tradeBtn");b.disabled=true;b.textContent="⏳ 1s...";setTimeout(()=>{tradeCooldown=false;updateTradeButton();},1000);}
+function updateTradeButton(){const b=document.getElementById("tradeBtn");if(stats.questActive){b.disabled=true;b.textContent=`🔒 Quests (${stats.questsCompleted}/3)`;}else if(tradeCooldown){b.disabled=true;b.textContent="⏳ 1s...";}else{b.disabled=false;b.textContent="🎃 TRADE UP";}}
 
-function showRebirthModal(){ document.getElementById("rebirthModal").classList.add("show"); }
-function closeRebirthModal(){ document.getElementById("rebirthModal").classList.remove("show"); }
-function doRebirthFromModal(){ closeRebirthModal(); doRebirth(); }
+function generateQuest(){const type=QUEST_TYPES[Math.floor(Math.random()*QUEST_TYPES.length)];const d=1+Math.floor(stats.trades/30);let target,desc;
+  switch(type.id){case"earn":target=Math.floor(5000*d*(0.9+Math.random()*0.5));desc=type.desc(target);break;case"better":target=Math.min(5,2+Math.floor(d/2));desc=type.desc(target);break;case"mystery":target=Math.min(3,1+Math.floor(d/3));desc=type.desc(target);break;case"inventory":target=Math.min(20,5+d*2);desc=type.desc(target);break;case"rare":target=Math.min(3,1+Math.floor(d/3));desc=type.desc(target);break;case"nomoney":target=Math.floor(3500*d*(0.8+Math.random()));desc=type.desc(target);break;}
+  return{id:type.id,name:type.name,desc,target};}
+function startQuestMode(){stats.questActive=true;stats.questsCompleted=0;stats.currentQuest=generateQuest();stats.questProgress=0;save();alert("📜 QUEST MODE\n\n1/3: "+stats.currentQuest.desc);}
+function startNextQuest(){stats.currentQuest=generateQuest();stats.questProgress=0;save();alert(`📜 Quest ${stats.questsCompleted+1}/3:\n\n${stats.currentQuest.desc}`);}
+function updateQuestUI(){const c=document.getElementById("questCard");if(!stats.questActive||!stats.currentQuest){c.style.display="none";return;}c.style.display="block";document.getElementById("questStep").textContent=`Quest ${stats.questsCompleted+1} of 3`;document.getElementById("questDesc").textContent=stats.currentQuest.desc;let p=stats.questProgress;if(stats.currentQuest.id==="inventory")p=stats.inventory?.length||0;document.getElementById("questProgress").textContent=`Progress: ${p} / ${stats.currentQuest.target}`;document.getElementById("questClaimBtn").style.display=isQuestComplete()?"block":"none";}
+function isQuestComplete(){if(!stats.currentQuest)return false;if(stats.currentQuest.id==="inventory")return(stats.inventory?.length||0)>=stats.currentQuest.target;return stats.questProgress>=stats.currentQuest.target;}
+function claimQuest(){if(!stats.questActive||!stats.currentQuest||!isQuestComplete())return;const r=Math.floor(2000+Math.random()*4000+stats.trades*30);stats.money+=r;stats.elo+=1;stats.questsCompleted++;if(stats.questsCompleted>=3){stats.questActive=false;stats.currentQuest=null;stats.questProgress=0;stats.questsCompleted=0;stats.tradesUntilQuest=10;save();alert(`✅ All 3 done!\n+$${r.toLocaleString()}`);}else{save();alert(`✅ ${stats.questsCompleted}/3\n+$${r.toLocaleString()}`);startNextQuest();}}
+function checkQuestProgress(type,amount=1){if(!stats.questActive||!stats.currentQuest)return;if(stats.currentQuest.id===type){stats.questProgress+=amount;save();}}
 
-function startCooldown(){
-  tradeCooldown = true;
-  const btn = document.getElementById("tradeBtn");
-  btn.disabled = true; btn.textContent = "⏳ 1s...";
-  setTimeout(()=>{ tradeCooldown = false; updateTradeButton(); }, 1000);
-}
+function updateGlobalMsg(){const el=document.getElementById("globalMsg");if(stats.globalMsg?.trim()){el.textContent="📢 "+stats.globalMsg;el.classList.add("show");}else el.classList.remove("show");}
+function updateEventBanner(){const b=document.getElementById("eventBanner");const map={"2x":{cls:"event-good",txt:"🔥 2x MONEY"},"gold":{cls:"event-good",txt:"🌧️ GOLD RAIN"},"boom":{cls:"event-good",txt:"💰 BOOM"},"freebox":{cls:"event-good",txt:"🎁 FREE BOX"},"lucky":{cls:"event-good",txt:"✨ LUCKY"},"jackpot":{cls:"event-good",txt:"💎 JACKPOT"},"storm":{cls:"event-bad",txt:"⛈️ STORM"},"tornado":{cls:"event-bad",txt:"🌪️ TORNADO"},"crash":{cls:"event-bad",txt:"📉 CRASH"},"thief":{cls:"event-bad",txt:"🦹 THIEF"},"curse":{cls:"event-bad",txt:"💀 CURSE"},"tax":{cls:"event-bad",txt:"🧾 TAX"}};if(!currentEvent||!map[currentEvent]){b.className="event-banner event-none";b.textContent="No active event";return;}b.className="event-banner "+map[currentEvent].cls;b.textContent=map[currentEvent].txt;}
+function rollEvent(){let r=Math.random();const g=stats.goldChance||0,t=stats.twoChance||0;if(r<0.06+t)currentEvent="2x";else if(r<0.11+g)currentEvent="gold";else if(r<0.15)currentEvent="boom";else if(r<0.18)currentEvent="freebox";else if(r<0.21)currentEvent="lucky";else if(r<0.23)currentEvent="jackpot";else if(r<0.28)currentEvent="storm";else if(r<0.32)currentEvent="tornado";else if(r<0.36)currentEvent="crash";else if(r<0.40)currentEvent="thief";else if(r<0.43)currentEvent="curse";else if(r<0.46)currentEvent="tax";else currentEvent=null;if(currentEvent==="lucky")stats.luckyStreak=true;if(currentEvent==="curse")stats.cursed=true;if(currentEvent==="tax"){const lost=Math.floor(stats.money*(0.07+Math.random()*0.1));stats.money=Math.max(0,stats.money-lost);setTimeout(()=>alert(`🧾 -$${lost.toLocaleString()}`),80);}if(currentEvent==="thief"&&Math.random()<0.5){const s=Math.floor(stats.money*(0.07+Math.random()*0.12));stats.money=Math.max(0,stats.money-s);setTimeout(()=>alert(`🦹 -$${s.toLocaleString()}`),80);}if(currentEvent==="freebox")setTimeout(()=>{if(confirm("🎁 Free Box?"))openMysteryBox(true);},150);stats.event=currentEvent;save();}
+function applyStorm(){if(currentEvent!=="storm"&&currentEvent!=="tornado")return true;if(stats.prot&&Math.random()<0.5){alert("🛡️ Protected!");return true;}if(Math.random()<0.45){const lost=Math.floor(stats.money*0.4);stats.money-=lost;alert(`💥 -$${lost.toLocaleString()}`);save();return false;}return true;}
+function getPriceMult(){return currentEvent==="gold"?0.5:1;}
+function getEarnMult(){let m=stats.moneyMult||1;m*=1/(1+stats.rebirths*0.35);if(currentEvent==="2x")m*=2;if(currentEvent==="boom")m*=1.45;if(currentEvent==="jackpot")m*=2.8;if(currentEvent==="storm"||currentEvent==="tornado")m*=0.55;if(currentEvent==="crash")m*=0.28;return m;}
 
-function updateTradeButton(){
-  const btn = document.getElementById("tradeBtn");
-  if(stats.questActive){ btn.disabled = true; btn.textContent = `🔒 Complete 3 Quests (${stats.questsCompleted}/3)`; }
-  else if(tradeCooldown){ btn.disabled = true; btn.textContent = "⏳ 1s..."; }
-  else { btn.disabled = false; btn.textContent = "🎃 TRADE UP"; }
-}
-
-function generateQuest(){
-  const type = QUEST_TYPES[Math.floor(Math.random() * QUEST_TYPES.length)];
-  const difficulty = 1 + Math.floor(stats.trades / 30);
-  let target, desc;
-  switch(type.id){
-    case "earn": target = Math.floor(6000 * difficulty * (0.9 + Math.random()*0.6)); desc = type.desc(target); break;
-    case "better": target = Math.min(5, 2 + Math.floor(difficulty/2)); desc = type.desc(target); break;
-    case "mystery": target = Math.min(4, 1 + Math.floor(difficulty/2)); desc = type.desc(target); break;
-    case "inventory": target = Math.min(22, 6 + difficulty * 2); desc = type.desc(target); break;
-    case "rare": target = Math.min(3, 1 + Math.floor(difficulty/3)); desc = type.desc(target); break;
-    case "nomoney": target = Math.floor(4000 * difficulty * (0.8 + Math.random())); desc = type.desc(target); break;
-  }
-  return { id: type.id, name: type.name, desc, target };
-}
-
-function startQuestMode(){
-  stats.questActive = true; stats.questsCompleted = 0;
-  stats.currentQuest = generateQuest(); stats.questProgress = 0; save();
-  alert("📜 QUEST MODE!\n\nComplete 3 quests to unlock the next 10 trades.\n\nQuest 1/3:\n" + stats.currentQuest.desc);
-}
-function startNextQuest(){
-  stats.currentQuest = generateQuest(); stats.questProgress = 0; save();
-  alert(`📜 Quest ${stats.questsCompleted + 1}/3:\n\n${stats.currentQuest.desc}`);
-}
-function updateQuestUI(){
-  const card = document.getElementById("questCard");
-  if(!stats.questActive || !stats.currentQuest){ card.style.display = "none"; return; }
-  card.style.display = "block";
-  document.getElementById("questStep").textContent = `Quest ${stats.questsCompleted + 1} of 3`;
-  document.getElementById("questDesc").textContent = stats.currentQuest.desc;
-  let progress = stats.questProgress;
-  if(stats.currentQuest.id === "inventory") progress = stats.inventory?.length || 0;
-  document.getElementById("questProgress").textContent = `Progress: ${progress} / ${stats.currentQuest.target}`;
-  document.getElementById("questClaimBtn").style.display = isQuestComplete() ? "block" : "none";
-}
-function isQuestComplete(){
-  if(!stats.currentQuest) return false;
-  if(stats.currentQuest.id === "inventory") return (stats.inventory?.length || 0) >= stats.currentQuest.target;
-  return stats.questProgress >= stats.currentQuest.target;
-}
-function claimQuest(){
-  if(!stats.questActive || !stats.currentQuest || !isQuestComplete()) return;
-  const reward = Math.floor(2000 + Math.random()*4000 + stats.trades * 30);
-  stats.money += reward; stats.elo += 1; stats.questsCompleted++;
-  if(stats.questsCompleted >= 3){
-    stats.questActive = false; stats.currentQuest = null; stats.questProgress = 0; stats.questsCompleted = 0; stats.tradesUntilQuest = 10;
-    save(); alert(`✅ All 3 Quests Complete!\n\n+$${reward.toLocaleString()}\n+1 ELO\n\n🎉 Next 10 trades unlocked!`);
-  } else {
-    save(); alert(`✅ Quest ${stats.questsCompleted}/3 complete!\n\n+$${reward.toLocaleString()}\n+1 ELO`);
-    startNextQuest();
-  }
-}
-function checkQuestProgress(type, amount=1){
-  if(!stats.questActive || !stats.currentQuest) return;
-  if(stats.currentQuest.id === type){ stats.questProgress += amount; save(); }
-}
-
-function updateGlobalMsg(){
-  const el = document.getElementById("globalMsg");
-  if(stats.globalMsg?.trim()){ el.textContent = "📢 " + stats.globalMsg; el.classList.add("show"); }
-  else el.classList.remove("show");
-}
-function updateEventBanner(){
-  const b = document.getElementById("eventBanner");
-  const map = {
-    "2x":{cls:"event-good",txt:"🔥 2x MONEY"}, "gold":{cls:"event-good",txt:"🌧️ GOLD RAIN"},
-    "boom":{cls:"event-good",txt:"💰 MARKET BOOM"}, "freebox":{cls:"event-good",txt:"🎁 FREE MYSTERY BOX"},
-    "lucky":{cls:"event-good",txt:"✨ LUCKY STREAK"}, "jackpot":{cls:"event-good",txt:"💎 JACKPOT"},
-    "storm":{cls:"event-bad",txt:"⛈️ STORM"}, "tornado":{cls:"event-bad",txt:"🌪️ TORNADO"},
-    "crash":{cls:"event-bad",txt:"📉 MARKET CRASH"}, "thief":{cls:"event-bad",txt:"🦹 THIEF"},
-    "curse":{cls:"event-bad",txt:"💀 CURSE"}, "tax":{cls:"event-bad",txt:"🧾 TAX DAY"}
-  };
-  if(!currentEvent || !map[currentEvent]){ b.className="event-banner event-none"; b.textContent="No active event"; return; }
-  b.className = "event-banner " + map[currentEvent].cls; b.textContent = map[currentEvent].txt;
-}
-function rollEvent(){
-  let r = Math.random();
-  const goldBoost = stats.goldChance||0, twoBoost = stats.twoChance||0;
-  if(r < 0.06+twoBoost) currentEvent="2x";
-  else if(r < 0.11+goldBoost) currentEvent="gold";
-  else if(r < 0.15) currentEvent="boom";
-  else if(r < 0.18) currentEvent="freebox";
-  else if(r < 0.21) currentEvent="lucky";
-  else if(r < 0.23) currentEvent="jackpot";
-  else if(r < 0.28) currentEvent="storm";
-  else if(r < 0.32) currentEvent="tornado";
-  else if(r < 0.36) currentEvent="crash";
-  else if(r < 0.40) currentEvent="thief";
-  else if(r < 0.43) currentEvent="curse";
-  else if(r < 0.46) currentEvent="tax";
-  else currentEvent = null;
-  if(currentEvent==="lucky") stats.luckyStreak=true;
-  if(currentEvent==="curse") stats.cursed=true;
-  if(currentEvent==="tax"){ const lost = Math.floor(stats.money*(0.07+Math.random()*0.10)); stats.money = Math.max(0, stats.money-lost); setTimeout(()=>alert(`🧾 Tax Day! Paid $${lost.toLocaleString()}`),80); }
-  if(currentEvent==="thief" && Math.random()<0.5){ const stolen = Math.floor(stats.money*(0.07+Math.random()*0.12)); stats.money = Math.max(0, stats.money-stolen); setTimeout(()=>alert(`🦹 Thief stole $${stolen.toLocaleString()}!`),80); }
-  if(currentEvent==="freebox") setTimeout(()=>{ if(confirm("🎁 Free Mystery Box! Open it?")) openMysteryBox(true); },150);
-  stats.event = currentEvent; save();
-}
-function applyStorm(){
-  if(currentEvent!=="storm" && currentEvent!=="tornado") return true;
-  if(stats.prot && Math.random()<0.5){ alert("🛡️ Protection saved you!"); return true; }
-  if(Math.random()<0.45){ const lost = Math.floor(stats.money*0.4); stats.money -= lost; alert(`💥 Storm hit! Lost $${lost.toLocaleString()}`); save(); return false; }
-  return true;
-}
-function getPriceMult(){ return currentEvent==="gold" ? 0.5 : 1; }
-function getEarnMult(){
-  let m = stats.moneyMult || 1;
-  m *= 1 / (1 + stats.rebirths * 0.35);
-  if(currentEvent==="2x") m*=2;
-  if(currentEvent==="boom") m*=1.45;
-  if(currentEvent==="jackpot") m*=2.8;
-  if(currentEvent==="storm"||currentEvent==="tornado") m*=0.55;
-  if(currentEvent==="crash") m*=0.28;
-  return m;
-}
-function rollValue(base, condMult){
-  let val = base * (0.55 + Math.random() * 0.55) * getEarnMult() * condMult;
-  if(Math.random() < 0.07){ val *= (3.5 + Math.random() * 4.5); return { value: Math.floor(val), rare: true }; }
-  if(Math.random() < 0.02){ val *= (8 + Math.random() * 10); return { value: Math.floor(val), rare: true, ultra: true }; }
-  return { value: Math.floor(val), rare: false };
-}
-
-const music = document.getElementById("bgMusic");
-let musicOn=false;
-function popTracks(){
-  const mode=document.getElementById("musicMode").value;
-  let list = mode==="spooky"?SPOOKY:mode==="owned"?MUSIC_SHOP.filter(t=>stats.ownedMusic.includes(t.id)):CALM;
-  const sel=document.getElementById("musicSelect"); sel.innerHTML="";
-  list.forEach((t,i)=>{const o=document.createElement("option");o.value=i;o.textContent=t.n;sel.appendChild(o);});
-  if(list[0]) music.src=list[0].u;
-}
+const music=document.getElementById("bgMusic");let musicOn=false;
+function popTracks(){const mode=document.getElementById("musicMode").value;let list=mode==="spooky"?SPOOKY:mode==="owned"?MUSIC_SHOP.filter(t=>stats.ownedMusic.includes(t.id)):CALM;const sel=document.getElementById("musicSelect");sel.innerHTML="";list.forEach((t,i)=>{const o=document.createElement("option");o.value=i;o.textContent=t.n;sel.appendChild(o);});if(list[0])music.src=list[0].u;}
 document.getElementById("musicMode").onchange=popTracks;
-document.getElementById("musicSelect").onchange=()=>{
-  const mode=document.getElementById("musicMode").value;
-  let list=mode==="spooky"?SPOOKY:mode==="owned"?MUSIC_SHOP.filter(t=>stats.ownedMusic.includes(t.id)):CALM;
-  music.src=list[document.getElementById("musicSelect").value].u;
-};
-document.getElementById("musicToggle").onclick=()=>{
-  if(musicOn){music.pause();document.getElementById("musicToggle").textContent="🔇";musicOn=false;}
-  else{music.play().catch(()=>{});document.getElementById("musicToggle").textContent="🔊";musicOn=true;}
-};
-document.getElementById("vol").oninput=e=>music.volume=e.target.value;
-popTracks();
+document.getElementById("musicSelect").onchange=()=>{const mode=document.getElementById("musicMode").value;let list=mode==="spooky"?SPOOKY:mode==="owned"?MUSIC_SHOP.filter(t=>stats.ownedMusic.includes(t.id)):CALM;music.src=list[document.getElementById("musicSelect").value].u;};
+document.getElementById("musicToggle").onclick=()=>{if(musicOn){music.pause();document.getElementById("musicToggle").textContent="🔇";musicOn=false;}else{music.play().catch(()=>{});document.getElementById("musicToggle").textContent="🔊";musicOn=true;}};
+document.getElementById("vol").oninput=e=>music.volume=e.target.value;popTracks();
 
-function showSlide(n){
-  for(let i=1;i<=4;i++) document.getElementById("slide"+i).classList.toggle("active",i===n);
-  document.querySelectorAll(".nav-tabs button").forEach((b,i)=>b.classList.toggle("active",i===n-1));
-  if(n===3) renderMusicShop(); if(n===4) renderEloShop();
-}
-function populateTier(){
-  const s=document.getElementById("tierSelect"); s.innerHTML="";
-  for(let i=0;i<=stats.unlocked;i++){ const o=document.createElement("option"); o.value=TIERS_N[i].toLowerCase(); o.textContent=TIERS_E[i]+" "+TIERS_N[i]; s.appendChild(o); }
-}
-function createSlots(){
-  const g=document.getElementById("slotsGrid"); g.innerHTML="";
-  const tier=document.getElementById("tierSelect").value;
-  const cats=Object.keys(TIERS[tier].categories);
-  for(let i=1;i<=10;i++){
-    const d=document.createElement("div"); d.className="item-slot";
-    d.style.setProperty("--c",TIERS[tier].color);
-    d.innerHTML=`<div class="slot-num">${i}</div>
-      <select id="c${i}" onchange="updItem(${i});updateCurrentPreview();updatePower()">${cats.map(c=>`<option>${c}</option>`).join("")}</select>
-      <select id="i${i}" onchange="updateCurrentPreview()"></select>
-      <select id="d${i}" onchange="updatePower()"><option>Poor</option><option>Fair</option><option selected>Good</option><option>Excellent</option><option>Mint</option></select>`;
-    g.appendChild(d); updItem(i);
-  }
-  document.getElementById("tierPill").textContent=TIERS[tier].emoji+" "+TIERS[tier].name;
-  updateCurrentPreview(); updatePower();
-}
-function updItem(i){
-  const tier=document.getElementById("tierSelect").value;
-  const cat=document.getElementById("c"+i).value;
-  document.getElementById("i"+i).innerHTML=TIERS[tier].categories[cat].map(x=>`<option>${x}</option>`).join("");
-}
-function updateCurrentPreview(){
-  const items=[];
-  for(let i=1;i<=10;i++){const v=document.getElementById("i"+i)?.value; if(v) items.push(v);}
-  document.getElementById("currentItemsPreview").textContent="Current: "+(items.slice(0,4).join(", ")+(items.length>4?"...":"")||"—");
-}
-function randomizeAll(){
-  const tier=document.getElementById("tierSelect").value;
-  const cats=Object.keys(TIERS[tier].categories);
-  for(let i=1;i<=10;i++){
-    const c=cats[Math.floor(Math.random()*cats.length)];
-    document.getElementById("c"+i).value=c; updItem(i);
-    const items=TIERS[tier].categories[c];
-    document.getElementById("i"+i).value=items[Math.floor(Math.random()*items.length)];
-  }
-  updateCurrentPreview(); updatePower();
-}
-function setSame(){
-  const f=document.getElementById("c1").value;
-  for(let i=2;i<=10;i++){document.getElementById("c"+i).value=f; updItem(i);}
-  updateCurrentPreview(); updatePower();
-}
+function showSlide(n){for(let i=1;i<=4;i++)document.getElementById("slide"+i).classList.toggle("active",i===n);document.querySelectorAll(".nav-tabs button").forEach((b,i)=>b.classList.toggle("active",i===n-1));if(n===3)renderMusicShop();if(n===4)renderEloShop();}
 
 function startTradeUp(){
-  if(tradeCooldown || stats.questActive) return;
-  document.getElementById("resultCard").classList.remove("show");
-  document.getElementById("declineBox").classList.remove("show");
-
-  const tierKey=document.getElementById("tierSelect").value;
-  const currentIdx=TIERS_N.indexOf(TIERS[tierKey].name);
-  const { avgCond, matchBonus } = getAssetStats();
-
+  if(tradeCooldown||stats.questActive)return;
+  document.getElementById("resultCard").classList.remove("show");document.getElementById("declineBox").classList.remove("show");
+  const{total:power,filled}=getTotalPower();if(filled===0&&!confirm("No assets. Continue?"))return;
   stats.tradesSinceDecline=(stats.tradesSinceDecline||0)+1;
-  if(stats.tradesSinceDecline >= 10+Math.floor(Math.random()*9)){
-    stats.tradesSinceDecline=0;
-    const reasons=["Buyer isn't interested","Condition too low","Already has similar items","Looking for different categories"];
-    document.getElementById("declineBox").classList.add("show");
-    document.getElementById("declineReason").textContent=reasons[Math.floor(Math.random()*reasons.length)];
-    document.getElementById("status").textContent="Trade declined";
-    startCooldown(); save(); return;
-  }
-
-  startCooldown(); rollEvent(); applyStorm();
-
-  // Better chance influenced by matching categories
-  let betterChance = 0.68 + matchBonus;
-  let isBetter;
-  if(stats.luckyStreak){ isBetter=true; stats.luckyStreak=false; }
-  else if(stats.cursed){ isBetter=Math.random()<0.32; stats.cursed=false; }
-  else isBetter = Math.random() < betterChance;
-
-  const targetIdx = isBetter ? Math.min(19,currentIdx+1) : Math.max(0,currentIdx-1);
-  const targetTier = TIERS[TIERS_N[targetIdx].toLowerCase()];
-
-  const cats={};
-  for(let i=1;i<=10;i++){ const c=document.getElementById("c"+i).value; cats[c]=(cats[c]||0)+1; }
-  const preferredCat=Object.entries(cats).sort((a,b)=>b[1]-a[1])[0][0];
-  const pool=targetTier.categories[preferredCat]||Object.values(targetTier.categories)[0];
-  const wonItem=pool[Math.floor(Math.random()*pool.length)];
-
-  // Condition multiplies the value
-  const roll = rollValue(targetTier.baseValue, avgCond);
-  const val = roll.value;
-
-  stats.inventory.unshift({
-    name:wonItem, tier:targetTier.name, emoji:targetTier.emoji,
-    cat:preferredCat, value:val, better:isBetter, rare:roll.rare, time:Date.now()
-  });
-  if(stats.inventory.length>40) stats.inventory.length=40;
-
-  stats.money+=val; stats.trades++;
-  checkQuestProgress("earn", val);
-  if(isBetter) checkQuestProgress("better", 1);
-  if(roll.rare) checkQuestProgress("rare", 1);
-
-  stats.tradesUntilQuest = (stats.tradesUntilQuest || 10) - 1;
-  if(stats.tradesUntilQuest <= 0) startQuestMode();
-
-  save();
-
+  if(stats.tradesSinceDecline>=12+Math.floor(Math.random()*8)){stats.tradesSinceDecline=0;document.getElementById("declineBox").classList.add("show");document.getElementById("declineReason").textContent="Buyer rejected.";startCooldown();save();return;}
+  startCooldown();rollEvent();applyStorm();
+  let betterChance=0.40+Math.min(0.50,power/400);if(stats.luckyStreak){betterChance=1;stats.luckyStreak=false;}if(stats.cursed){betterChance*=0.45;stats.cursed=false;}
+  const isBetter=Math.random()<betterChance;let avgTier=0,count=0;const cats={};
+  for(let i=0;i<10;i++){const it=stats.equipped[i];if(it){const idx=TIERS_N.indexOf(it.tier);avgTier+=idx>=0?idx:0;count++;cats[it.cat]=(cats[it.cat]||0)+1;}}
+  avgTier=count>0?avgTier/count:0;let targetIdx=Math.round(avgTier);if(isBetter)targetIdx=Math.min(MAX_TIER,targetIdx+1+(power>150?1:0));else targetIdx=Math.max(0,targetIdx-1);targetIdx=Math.max(0,Math.min(MAX_TIER,targetIdx));
+  const targetTier=TIERS[TIERS_N[targetIdx].toLowerCase()];const preferredCat=Object.entries(cats).sort((a,b)=>b[1]-a[1])[0]?.[0]||"Cars";
+  const pool=targetTier.categories[preferredCat]||Object.values(targetTier.categories)[0];const wonItem=pool[Math.floor(Math.random()*pool.length)];
+  let baseVal=targetTier.baseValue*(0.6+Math.random()*0.5)*(1+power/120)*getEarnMult();let rare=false,ultra=false;
+  if(Math.random()<0.06+power/2000){baseVal*=(3.5+Math.random()*4);rare=true;}if(Math.random()<0.015+power/5000){baseVal*=(8+Math.random()*8);rare=true;ultra=true;}
+  const val=Math.floor(baseVal);stats.equipped=[null,null,null,null,null,null,null,null,null,null];
+  stats.inventory.unshift({name:wonItem,tier:targetTier.name,emoji:targetTier.emoji,cat:preferredCat,value:val,better:isBetter,rare,ultra,time:Date.now()});
+  if(stats.inventory.length>50)stats.inventory.length=50;stats.money+=val;stats.trades++;
+  checkQuestProgress("earn",val);if(isBetter)checkQuestProgress("better",1);if(rare)checkQuestProgress("rare",1);
+  stats.tradesUntilQuest=(stats.tradesUntilQuest||10)-1;if(stats.tradesUntilQuest<=0)startQuestMode();save();
   document.getElementById("resultCard").classList.add("show");
-  let chanceText = isBetter ? "✅ Better Tier!" : "❌ Worse Tier!";
-  if(roll.ultra) chanceText += " 🔥 ULTRA RARE!";
-  else if(roll.rare) chanceText += " 💎 RARE EXPENSIVE!";
-  document.getElementById("resChance").textContent = chanceText;
-  document.getElementById("resChance").style.color = roll.rare ? "#fbbf24" : (isBetter ? "#4ade80" : "#f87171");
-  document.getElementById("resTier").textContent = targetTier.emoji + " " + targetTier.name;
-  document.getElementById("resItem").textContent = wonItem + (roll.rare ? " 💎" : "");
-  document.getElementById("resValue").textContent = "$" + val.toLocaleString();
-  document.getElementById("resNote").textContent = `Condition: ${avgCond.toFixed(2)}x • Match bonus: +${Math.round(matchBonus*100)}%`;
-  document.getElementById("status").textContent = (isBetter?"Better":"Worse") + " → " + wonItem + " (+$" + val.toLocaleString() + ")";
+  let txt=isBetter?"✅ Better!":"❌ Weaker";if(ultra)txt+=" 🔥 ULTRA";else if(rare)txt+=" 💎 RARE";
+  document.getElementById("resChance").textContent=txt;document.getElementById("resChance").style.color=rare?"#fbbf24":(isBetter?"#4ade80":"#f87171");
+  document.getElementById("resTier").textContent=targetTier.emoji+" "+targetTier.name;document.getElementById("resItem").textContent=wonItem+(rare?" 💎":"");
+  document.getElementById("resValue").textContent="$"+val.toLocaleString();document.getElementById("resNote").textContent=`Power ${power}`;
 }
 
 function openMysteryBox(free=false){
   document.getElementById("resultCard").classList.remove("show");
-  document.getElementById("declineBox").classList.remove("show");
-  if(!free){
-    const cost=Math.floor(25000*getPriceMult());
-    if(stats.money<cost) return alert(`Need $${cost.toLocaleString()}`);
-    stats.money-=cost; checkQuestProgress("nomoney", cost);
-  }
-  rollEvent(); applyStorm();
-
-  const roll = Math.random();
-  let pool=[], tierName="Low";
-  if(roll<0.78){ for(let i=0;i<=6;i++) Object.values(TIERS[TIERS_N[i].toLowerCase()].categories).forEach(a=>pool.push(...a.slice(0,3))); tierName=TIERS_N[Math.floor(Math.random()*7)]; }
-  else if(roll<0.95){ for(let i=7;i<=12;i++) Object.values(TIERS[TIERS_N[i].toLowerCase()].categories).forEach(a=>pool.push(...a.slice(0,2))); tierName=TIERS_N[7+Math.floor(Math.random()*6)]; }
-  else { for(let i=13;i<=19;i++) Object.values(TIERS[TIERS_N[i].toLowerCase()].categories).forEach(a=>pool.push(...a.slice(0,1))); tierName=TIERS_N[13+Math.floor(Math.random()*7)]; }
-  const item=pool[Math.floor(Math.random()*pool.length)]||"Mystery Junk";
-
-  let baseVal = 8000 + Math.random()*220000;
-  let isRare = false;
-  if(Math.random() < 0.06){ baseVal *= (4 + Math.random()*6); isRare = true; }
-  if(Math.random() < 0.015){ baseVal *= (10 + Math.random()*12); isRare = true; }
-  if(roll > 0.95) baseVal *= 1.8;
-  const val = Math.floor(baseVal * getEarnMult());
-
-  stats.inventory.unshift({ name:item, tier:tierName, emoji:"🎁", cat:"Mystery", value:val, better:true, rare:isRare, time:Date.now() });
-  if(stats.inventory.length>40) stats.inventory.length=40;
-  stats.money+=val;
-  checkQuestProgress("mystery", 1); checkQuestProgress("earn", val); if(isRare) checkQuestProgress("rare", 1);
-  save();
-
-  document.getElementById("resultCard").classList.add("show");
-  document.getElementById("resChance").textContent = free ? "🎁 Free Mystery Box!" : (isRare ? "🎁💎 RARE EXPENSIVE!" : "🎁 Mystery Box");
-  document.getElementById("resChance").style.color = isRare ? "#fbbf24" : "#c084fc";
-  document.getElementById("resTier").textContent = tierName;
-  document.getElementById("resItem").textContent = item + (isRare ? " 💎" : "");
-  document.getElementById("resValue").textContent = "$"+val.toLocaleString();
-  document.getElementById("resNote").textContent = isRare ? "Rare expensive item!" : "Added to Inventory";
+  if(!free){const cost=Math.floor(MYSTERY_COST*getPriceMult());if(stats.money<cost)return alert(`Need $${cost.toLocaleString()}`);stats.money-=cost;checkQuestProgress("nomoney",cost);}
+  rollEvent();applyStorm();const roll=Math.random();let pool=[],tierName="Beggar";
+  if(roll<0.82){for(let i=0;i<=Math.min(8,MAX_TIER);i++)Object.values(TIERS[TIERS_N[i].toLowerCase()].categories).forEach(a=>pool.push(...a.slice(0,2)));tierName=TIERS_N[Math.floor(Math.random()*Math.min(9,MAX_TIER+1))];}
+  else if(roll<0.96){for(let i=9;i<=Math.min(25,MAX_TIER);i++)Object.values(TIERS[TIERS_N[i].toLowerCase()].categories).forEach(a=>pool.push(...a.slice(0,1)));tierName=TIERS_N[Math.min(MAX_TIER,9+Math.floor(Math.random()*17))];}
+  else{for(let i=26;i<=MAX_TIER;i++)Object.values(TIERS[TIERS_N[i].toLowerCase()].categories).forEach(a=>pool.push(...a.slice(0,1)));tierName=TIERS_N[Math.min(MAX_TIER,26+Math.floor(Math.random()*Math.max(1,MAX_TIER-25)))];}
+  const item=pool[Math.floor(Math.random()*pool.length)]||"Mystery Junk";let baseVal=4000+Math.random()*90000;let rare=false;
+  if(Math.random()<0.04){baseVal*=(2.5+Math.random()*3);rare=true;}if(Math.random()<0.01){baseVal*=(5+Math.random()*6);rare=true;}if(roll>=0.96)baseVal*=1.4;
+  const val=Math.floor(baseVal*getEarnMult());stats.inventory.unshift({name:item,tier:tierName,emoji:"🎁",cat:"Mystery",value:val,better:true,rare,time:Date.now()});
+  if(stats.inventory.length>50)stats.inventory.length=50;stats.money+=val;checkQuestProgress("mystery",1);checkQuestProgress("earn",val);if(rare)checkQuestProgress("rare",1);save();
+  document.getElementById("resultCard").classList.add("show");document.getElementById("resChance").textContent=rare?"🎁💎 RARE":"🎁 Mystery Box ($100k)";
+  document.getElementById("resChance").style.color=rare?"#fbbf24":"#c084fc";document.getElementById("resTier").textContent=tierName;
+  document.getElementById("resItem").textContent=item+(rare?" 💎":"");document.getElementById("resValue").textContent="$"+val.toLocaleString();
+  document.getElementById("resNote").textContent=free?"Free!":"Cost $100,000";
 }
 
-function sellItem(index){
-  if(!stats.inventory[index]) return;
-  const item = stats.inventory[index];
-  const sellPrice = Math.floor(item.value * 0.85); // 85% of value
-  if(!confirm(`Sell ${item.name} for $${sellPrice.toLocaleString()}?`)) return;
-  stats.money += sellPrice;
-  stats.inventory.splice(index, 1);
-  save();
-  alert(`Sold for $${sellPrice.toLocaleString()}!`);
-}
+function sellItem(i){if(!stats.inventory[i])return;const item=stats.inventory[i];const price=Math.floor(item.value*0.8);if(!confirm(`Sell ${item.name} for $${price.toLocaleString()}?`))return;stats.money+=price;stats.inventory.splice(i,1);save();}
+function renderInventory(){const list=document.getElementById("inventoryList");document.getElementById("invCount").textContent=(stats.inventory?.length||0)+" items";if(!stats.inventory?.length){list.innerHTML=`<div class="inv-empty">No items.</div>`;return;}list.innerHTML=stats.inventory.slice(0,25).map((it,idx)=>`<div class="inv-item"><div class="left"><strong>${it.emoji||"📦"} ${it.name}${it.rare?' <span class="rare-tag">RARE</span>':''}</strong><br><span style="font-size:.72rem;color:var(--muted)">${it.tier} • Pwr ${getItemPower(it)} • $${it.value.toLocaleString()}</span></div><div style="display:flex;gap:5px"><button class="btn-equip" onclick="equipItem(${idx})">Equip</button><button class="btn-sell" onclick="sellItem(${idx})">Sell</button></div></div>`).join("");}
 
-function renderInventory(){
-  const list=document.getElementById("inventoryList");
-  document.getElementById("invCount").textContent=(stats.inventory?.length||0)+" items";
-  if(!stats.inventory?.length){ list.innerHTML=`<div class="inv-empty">No items yet.</div>`; return; }
-  list.innerHTML=stats.inventory.slice(0,20).map((it, idx)=>`
-    <div class="inv-item">
-      <div class="left">
-        <strong>${it.emoji||"📦"} ${it.name}${it.rare ? ' <span class="rare-tag">RARE</span>' : ''}</strong><br>
-        <span style="font-size:.75rem;color:var(--muted)">${it.tier} • ${it.cat}</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <div class="val">$${it.value.toLocaleString()}</div>
-        <button class="btn-sell" onclick="sellItem(${idx})">Sell</button>
-      </div>
-    </div>`).join("");
-}
+function doRebirth(){const need=getRebirthNeedMoney();if(stats.money<need)return alert(`Need $${need.toLocaleString()}`);if(!confirm(`Rebirth for $${need.toLocaleString()}?\n+10 ELO`))return;stats.money-=need;stats.rebirths++;stats.elo+=10;stats.unlocked=Math.min(MAX_TIER,stats.unlocked+1);stats.trades=0;lastRebirthReady=false;save();alert("Rebirth complete!");}
+function fullReset(){if(!confirm("Delete EVERYTHING?"))return;stats={money:0,elo:0,trades:0,rebirths:0,unlocked:0,ownedMusic:[],prot:false,goldChance:0,twoChance:0,moneyMult:1,event:null,globalMsg:"",inventory:[],tradesSinceDecline:0,luckyStreak:false,cursed:false,questActive:false,currentQuest:null,questProgress:0,questsCompleted:0,tradesUntilQuest:10,equipped:[null,null,null,null,null,null,null,null,null,null]};currentEvent=null;lastRebirthReady=false;save();popTracks();}
 
-function doRebirth(){
-  const needMoney = getRebirthNeedMoney();
-  if(stats.money < needMoney) return alert(`Need $${needMoney.toLocaleString()}`);
-  if(!confirm(`Rebirth for $${needMoney.toLocaleString()}?\n\n+10 ELO\nUnlock next tier`)) return;
-  stats.money -= needMoney; stats.rebirths++; stats.elo += 10;
-  stats.unlocked = Math.min(19, stats.unlocked+1); stats.trades = 0; lastRebirthReady = false;
-  save(); populateTier(); createSlots(); updateRebirthDisplay();
-  alert("Rebirth complete! +10 ELO");
-}
-
-function fullReset(){
-  if(!confirm("Delete EVERYTHING?")) return;
-  stats={money:0,elo:0,trades:0,rebirths:0,unlocked:0,ownedMusic:[],prot:false,goldChance:0,twoChance:0,moneyMult:1,event:null,globalMsg:"",inventory:[],tradesSinceDecline:0,luckyStreak:false,cursed:false,questActive:false,currentQuest:null,questProgress:0,questsCompleted:0,tradesUntilQuest:10};
-  currentEvent=null; lastRebirthReady=false;
-  save(); populateTier(); createSlots(); popTracks();
-}
-
-function toggleAdmin(){ document.getElementById("adminPanel").classList.toggle("show"); }
-function checkAdminCode(){
-  if(document.getElementById("adminCode").value.trim()==="knife323"){
-    document.getElementById("adminLock").style.display="none";
-    document.getElementById("adminContent").style.display="block";
-    alert("Admin unlocked!");
-  } else alert("Wrong code");
-}
-function adminSetMoney(){const v=prompt("Set money:",stats.money);if(v!==null){stats.money=Math.max(0,parseInt(v)||0);save();}}
+function toggleAdmin(){document.getElementById("adminPanel").classList.toggle("show");}
+function checkAdminCode(){if(document.getElementById("adminCode").value.trim()==="knife323"){document.getElementById("adminLock").style.display="none";document.getElementById("adminContent").style.display="block";alert("Admin unlocked");}else alert("Wrong code");}
+function adminSetMoney(){const v=prompt("Money:",stats.money);if(v!==null){stats.money=Math.max(0,+v||0);save();}}
 function adminAddMoney(){stats.money+=1000000;save();}
-function adminSetElo(){const v=prompt("Set ELO:",stats.elo);if(v!==null){stats.elo=Math.max(0,parseInt(v)||0);save();}}
+function adminSetElo(){const v=prompt("ELO:",stats.elo);if(v!==null){stats.elo=Math.max(0,+v||0);save();}}
 function adminAddElo(){stats.elo+=500;save();}
-function adminUnlockAll(){stats.unlocked=19;save();populateTier();createSlots();updateRebirthDisplay();alert("All unlocked");}
-function adminGiveAllMusic(){stats.ownedMusic=MUSIC_SHOP.map(m=>m.id);save();popTracks();alert("All music");}
-function adminMaxMult(){stats.moneyMult=5;save();alert("Mult set to 5x");}
-function adminGiveProt(){stats.prot=true;save();alert("Protection granted");}
-function adminSkipQuest(){
-  if(stats.questActive){ stats.questActive=false; stats.currentQuest=null; stats.questProgress=0; stats.questsCompleted=0; stats.tradesUntilQuest=10; save(); alert("Quests skipped!"); }
-  else alert("No active quests");
-}
-function forceEvent(e){currentEvent=e;stats.event=e;if(e==="lucky")stats.luckyStreak=true;if(e==="curse")stats.cursed=true;save();alert("Forced: "+(e||"none"));}
-function adminGodMode(){
-  stats.money=999999999;stats.elo=9999;stats.unlocked=19;
-  stats.ownedMusic=MUSIC_SHOP.map(m=>m.id);stats.prot=true;stats.moneyMult=5;
-  stats.goldChance=0.2;stats.twoChance=0.2;save();populateTier();createSlots();popTracks();updateRebirthDisplay();
-  alert("GOD MODE");
-}
-function postGlobalMessage(){ const msg=document.getElementById("globalMsgInput").value.trim(); if(!msg)return alert("Type something"); stats.globalMsg=msg;save();alert("Posted!"); }
-function clearGlobalMessage(){stats.globalMsg="";document.getElementById("globalMsgInput").value="";save();}
+function adminUnlockAll(){stats.unlocked=MAX_TIER;save();alert("All tiers unlocked");}
+function adminGiveAllMusic(){stats.ownedMusic=MUSIC_SHOP.map(m=>m.id);save();popTracks();alert("All shop tracks");}
+function adminMaxMult(){stats.moneyMult=5;save();}
+function adminGiveProt(){stats.prot=true;save();}
+function adminSkipQuest(){stats.questActive=false;stats.currentQuest=null;stats.questProgress=0;stats.questsCompleted=0;stats.tradesUntilQuest=10;save();}
+function adminFillAssets(){for(let i=0;i<10;i++){const tier=TIERS_N[Math.min(MAX_TIER,20+Math.floor(Math.random()*40))];const t=TIERS[tier.toLowerCase()];const cat=Object.keys(t.categories)[Math.floor(Math.random()*6)];stats.equipped[i]={name:t.categories[cat][0],tier,emoji:t.emoji,cat,value:t.baseValue*2,rare:Math.random()<0.3,time:Date.now()};}save();}
+function forceEvent(e){currentEvent=e;stats.event=e;if(e==="lucky")stats.luckyStreak=true;if(e==="curse")stats.cursed=true;save();}
+function adminGodMode(){stats.money=999999999;stats.elo=9999;stats.unlocked=MAX_TIER;stats.prot=true;stats.moneyMult=5;stats.ownedMusic=MUSIC_SHOP.map(m=>m.id);stats.goldChance=0.2;stats.twoChance=0.2;adminFillAssets();save();popTracks();alert("GOD MODE");}
 
-function renderMusicShop(){
-  const el=document.getElementById("musicShop");el.innerHTML="";
-  MUSIC_SHOP.forEach(t=>{
-    const owned=stats.ownedMusic.includes(t.id);
-    const price=Math.floor(t.p*getPriceMult());
-    el.innerHTML+=`<div class="shop-item"><div><strong>${t.n}</strong><br>$${price.toLocaleString()}</div>
-      <button class="btn-buy" onclick="buyMusic('${t.id}',${price})" ${owned||stats.money<price?'disabled':''}>${owned?'Owned':'Buy'}</button></div>`;
-  });
-}
-function buyMusic(id,price){
-  if(stats.ownedMusic.includes(id)||stats.money<price)return;
-  stats.money-=price; stats.ownedMusic.push(id); checkQuestProgress("nomoney", price); save(); renderMusicShop(); popTracks();
-}
-function renderEloShop(){
-  const el=document.getElementById("eloShop");el.innerHTML="";
-  ELO_ITEMS.forEach(it=>{
-    let owned=false;
-    if(it.type==="prot")owned=stats.prot;
-    if(it.type==="goldChance")owned=stats.goldChance>=0.12;
-    if(it.type==="twoChance")owned=stats.twoChance>=0.12;
-    if(it.type==="mult")owned=stats.moneyMult>=1+it.v;
-    el.innerHTML+=`<div class="shop-item"><div><strong>${it.n}</strong><br><small>${it.d}</small><br>${it.c} ELO</div>
-      <button class="btn-buy" onclick="buyElo('${it.id}')" ${owned||stats.elo<it.c?'disabled':''}>${owned?'Owned':'Buy'}</button></div>`;
-  });
-}
-function buyElo(id){
-  const it=ELO_ITEMS.find(x=>x.id===id);
-  if(!it||stats.elo<it.c)return;
-  stats.elo-=it.c;
-  if(it.type==="prot")stats.prot=true;
-  if(it.type==="goldChance")stats.goldChance=0.12;
-  if(it.type==="twoChance")stats.twoChance=0.12;
-  if(it.type==="cash")stats.money+=it.v;
-  if(it.type==="mult")stats.moneyMult+=it.v;
-  save();renderEloShop();alert("Purchased!");
-}
+function renderMusicShop(){const el=document.getElementById("musicShop");el.innerHTML="";MUSIC_SHOP.forEach(t=>{const owned=stats.ownedMusic.includes(t.id);const price=Math.floor(t.p*getPriceMult());el.innerHTML+=`<div class="shop-item"><div><strong>${t.n}</strong><br>$${price.toLocaleString()}</div><button class="btn-buy" onclick="buyMusic('${t.id}',${price})" ${owned||stats.money<price?'disabled':''}>${owned?'Owned':'Buy'}</button></div>`;});}
+function buyMusic(id,price){if(stats.ownedMusic.includes(id)||stats.money<price)return;stats.money-=price;stats.ownedMusic.push(id);checkQuestProgress("nomoney",price);save();renderMusicShop();popTracks();}
+function renderEloShop(){const el=document.getElementById("eloShop");el.innerHTML="";ELO_ITEMS.forEach(it=>{let owned=false;if(it.type==="prot")owned=stats.prot;if(it.type==="goldChance")owned=stats.goldChance>=0.12;if(it.type==="twoChance")owned=stats.twoChance>=0.12;if(it.type==="mult")owned=stats.moneyMult>=1+it.v;el.innerHTML+=`<div class="shop-item"><div><strong>${it.n}</strong><br><small>${it.d}</small><br>${it.c} ELO</div><button class="btn-buy" onclick="buyElo('${it.id}')" ${owned||stats.elo<it.c?'disabled':''}>${owned?'Owned':'Buy'}</button></div>`;});}
+function buyElo(id){const it=ELO_ITEMS.find(x=>x.id===id);if(!it||stats.elo<it.c)return;stats.elo-=it.c;if(it.type==="prot")stats.prot=true;if(it.type==="goldChance")stats.goldChance=0.12;if(it.type==="twoChance")stats.twoChance=0.12;if(it.type==="cash")stats.money+=it.v;if(it.type==="mult")stats.moneyMult+=it.v;save();renderEloShop();alert("Purchased!");}
 
-populateTier(); createSlots(); render(); rollEvent();
+render();
+rollEvent();
 </script>
 </body>
 </html>
